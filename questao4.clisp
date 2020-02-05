@@ -1,0 +1,23 @@
+;Função cars separa todos os elementos car
+(defun cars (matriz)
+  (if (null matriz)
+    ;Verifica se a matriz é nula
+      nil
+      (cons (car (car matriz)) (cars (cdr matriz)))))
+;Função cdrs separa todos os elementos cdr
+(defun cdrs (matriz)
+  (if (null matriz)
+      nil
+      (cons (cdr (car matriz)) (cdrs (cdr matriz)))))
+;Função tranpoe vai fazer a transposição da matriz
+(defun transpoe (matriz)
+  (cond ((null matriz) nil)
+        ((null (car matriz)) nil)
+        ;
+        (t (cons (cars matriz) (transpoe (cdrs matriz)))))
+  ;Printa a matriz transposta
+  (print matriz)
+  )
+        
+;Chamada da função
+(transpoe '((1 2 3)(4 5 6)))

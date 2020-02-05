@@ -1,0 +1,10 @@
+;Funçao verificar que recebe um número e uma lista
+(defun verificar (x l)	
+	;A função member verifica se um determinado número pertence a uma lista					
+	(setq a (member x l))					
+	;Escreve a negação da igualdade. Esse passo foi feito para que retorne t caso o elemento pertença à lista e nil cado contrário.
+	(write (not (equal nil a))) 			
+ )
+
+;Chamada da função
+(verificar 7 '(0 1 2 3 5 6))

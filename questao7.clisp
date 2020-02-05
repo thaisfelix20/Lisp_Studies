@@ -1,0 +1,21 @@
+;Função tri-retan que recebe 3 números
+(defun tri-retan (n1 n2 n3)
+	;O predicado max compara os três números e retorna o maior. O maior número é armazenado em "a"
+	(setq a (max n1 n2 n3))
+	;Soma o quadrado dos dois lados menores
+	(if (= a n1)
+		(setq soma (+ (* n2 n2) (* n3 n3))))
+	(if(= a n2)
+		(setq soma (+ (* n1 n1) (* n3 n3))))
+	(if(= a n3)
+		(setq soma (+ (* n1 n1) (* n2 n2))))
+	;Armazena em proc 2% do quadrado do maior lado
+	(setq porc (* 0.02 (* a a)))
+	;Armazena em dif a diferença entre a soma dos quadrados dos dois lados menores com o quadrado do lado maior
+	(setq dif (- soma (* a a)))
+	;Verifica se a diferença entre eles é menor que 2% do quadrado do lado maior
+	(write (< dif porc))
+	)
+
+;Chamada da função
+(tri-retan 5 12 13 )

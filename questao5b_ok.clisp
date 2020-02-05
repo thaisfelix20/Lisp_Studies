@@ -1,0 +1,15 @@
+(defstruct produto nome) ;estrutura modelo dos produtos
+(setq produto1 (make-produto :nome "Bife Preço: 15 reais")) ;cada produto implementa uma estrutura
+(setq produto2 (make-produto :nome "Arroz Preço: 4 reais"))
+(setq produto3 (make-produto :nome "Feijao 5 reais"))
+(setq produto4 (make-produto :nome "Cebola 1 real"))
+(setq produto5 (make-produto :nome "Ervilha Preço: 2 reais"))
+(setq produto6 (make-produto :nome "Macarrao Preço: 3 reais"))
+(setq produto7 (make-produto :nome "Oleo Preço: 6 reais" ))
+(setq produto8 (make-produto :nome "Tomate Preço: 1 real"))
+
+(setq vetor (vector produto1 produto2 produto3 produto4 produto5 produto6 produto7 produto8)) ;Foi feito um vetor da estrutura produto
+
+;sorting the strings
+(write (sort (vector (produto-nome produto1) (produto-nome produto2) (produto-nome produto3) (produto-nome produto4) (produto-nome produto5) (produto-nome produto6) (produto-nome produto7) (produto-nome produto8)) #'string<))
+(terpri)

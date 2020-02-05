@@ -1,0 +1,11 @@
+;Função palindronop que recebe uma lista
+(defun palindronop (l)
+	;A função reverde inverte a ordem dos elementos de uma lista. A lista invertida é armazenada em a
+	(setq a (reverse l))
+	;Verifica se a lista é igual a "a", que é a lista invertida
+	(write (equal a l) )
+	(print a)
+	)
+
+;Chamada da função
+(palindronop '(1 2 1))

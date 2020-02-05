@@ -1,0 +1,36 @@
+(defstruct produto arroz bife cebola ervilha feijao macarrao oleo tomate) ;Estrutura para adicionar os produtos. 
+(setq produtos (make-produto :arroz 4 :bife 15 :cebola 1 :ervilha 2 :feijao 5 :macarrao 3 :oleo 6 :tomate 1)) ;Associação de valores dos produtos
+
+(print "Digite o produto desejado: (Valor em R$)")
+(setq produtolido (read))
+
+(if (string-equal produtolido "arroz") 
+	(setq p1 (produto-arroz produtos)) 
+	(if (string-equal produtolido "bife")
+		(setq p1 (produto-bife produtos))
+			(if (string-equal produtolido "cebola")
+				(setq p1 (produto-cebola produtos))
+				(if (string-equal produtolido "ervilha")
+					(setq p1 (produto-ervilha produtos))
+						(if (string-equal produtolido "feijao")
+							(setq p1 (produto-feijao produtos))
+								(if (string-equal produtolido "macarrao")
+									(setq p1 (produto-macarrao produtos))
+										(if (string-equal produtolido "oleo")
+											(setq p1 (produto-oleo produtos))
+											(if (string-equal produtolido "tomate")
+												(setq p1 (produto-oleo produtos))
+												(print "Produto não encontrado")
+											)
+
+										)
+								)
+
+						)
+				)
+			)
+	)
+
+)
+
+(print p1)

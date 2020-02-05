@@ -1,0 +1,45 @@
+(setq iguais nil) ; Lista que vai receber os valores  que se repetem nas duas listas.
+
+(defun intersecaonumero(l1 l2) ; Função que recebe as duas listas.
+	(if (equal (car l1) nil) ; Significa que chegou no fim
+		(); não faz nada
+		(if (member (car l1) l2) ; Condição que compara se o primeiro elemento da primeira lista tem algum valor com os termos da segunda lista.
+		    (progn
+          		(push (car l1) iguais) ;  Se for igual, vai adicional o primeiro elemento da lista1 a lista iguais.
+           		(intersecaonumero (cdr l1) l2) ; Depois pega o restante da lista1 e chama a função interseção denovo, até comparar todos os valores da lista1 com a lista2
+      		)
+      	(intersecaonumero (cdr l1) l2); Caso não for igual os valores comparados ele pega o próximo valor da lista1.
+		)
+	)
+)
+
+(setq lista1 (list 14 52 37 28 )) ;Primeira lista para números.
+(print lista1)
+
+(setq lista2 (list 28 76 12 52)) ;Segunda lista para números.
+(print lista2)
+
+(setq iguais nil); Comando necessário pois senão ele vai guardar os valores anteriores de iguais e o atual juntos.
+(intersecaonumero lista1 lista2) ; Chamando a função e passando como parâmetro a lista 1 e 2.
+(print iguais) ;Imprimindo os números iguais da lista.
+
+
+(setq lista1 (list "xpto" "zky" "bdo" )) ;Primeira lista para strings.
+(print lista1)
+
+(setq lista2 (list "pois" "XPTO" "ola")) ;Segunda lista para strings.
+(print lista2)
+
+(setq iguais nil)
+(intersecaonumero '(xpto zky bdo) '(pois XPTO ola)) ; Chamando a função e passando como parâmetro a lista 1 e 2.
+(print iguais) ;Imprimindo os strings iguais da lista
+
+(setq lista1 (list "xpto" "zky" "bdo" )) ;Primeira lista para strings.
+(print lista1)
+
+(setq lista2 (list "fred" "zyc" "ola")) ;Segunda lista para strings.
+(print lista2)
+
+(setq iguais nil)
+(intersecaonumero  '(xpto zky bdo) '(fred zyc ola)) ; Chamando a função e passando como parâmetro a lista 1 e 2.
+(print iguais) ;Imprimindo os strings iguais da lista

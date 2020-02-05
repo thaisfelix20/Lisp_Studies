@@ -1,0 +1,111 @@
+(defstruct produto nome preco) ;estrutura modelo dos produtos
+(setq produto1 (make-produto :nome "Bife" :preco 15)) ;cada produto implementa uma estrutura
+(setq produto2 (make-produto :nome "Arroz" :preco 4))
+(setq produto3 (make-produto :nome "feijao" :preco 5))
+(setq produto4 (make-produto :nome "cebola" :preco 1))
+(setq produto5 (make-produto :nome "ervilha" :preco 2))
+(setq produto6 (make-produto :nome "macarrao" :preco 3))
+(setq produto7 (make-produto :nome "oleo" :preco 6))
+(setq produto8 (make-produto :nome "tomate" :preco 1))
+
+
+(print "Digite 0 no produto que voce nao deseja ou a quantidade do produto que deseja.")
+;Quantidade de cada produto que a pessoa deseja
+(print "Quantidade de Bife:")
+(setq quantbife (read))
+(print "Quantidade de Arroz:")
+(setq quantarroz (read))
+(print "Quantidade de Feijao:")
+(setq quantfeijao (read))
+(print "Quantidade de Cebola:")
+(setq quantcebola (read))
+(print "Quantidade de Ervilha:")
+(setq quantervilha (read))
+(print "Quantidade de Macarrao:")
+(setq quantmacarrao (read))
+(print "Quantidade de Oleo:")
+(setq quantoleo (read))
+(print "Quantidade de Tomate:")
+(setq quanttomate (read))
+
+
+(print "Precos parciais:")
+
+;Se a pessoa digitar 0 não vai fazer nada, apenas pular para o proximo produto, ja se digitar qualquer outro valor ele sera multiplicado pelo valor do produto.
+(if (equal quantbife 0) () (progn
+								(print "Bife:")
+								(print "Quant:")
+								(print quantbife) ; Mostra o valor da quantidade que o usuario digitou (diferente de zero).
+								(print "Valor parcial: ")
+								(print (* quantbife (produto-preco produto1))) ;Esse valor seria o valor total apenas desse produto.
+							)
+)
+
+(if (equal quantarroz 0) () (progn
+								(print "Arroz:")
+								(print "Quant:")
+								(print quantarroz)
+								(print "Valor parcial: ")
+								(print (* quantarroz (produto-preco produto2)))
+							)
+)
+
+(if (equal quantfeijao 0) () (progn
+								(print "Feijao:")
+								(print "Quant:")
+								(print quantfeijao)
+								(print "Valor parcial: ")
+								(print (* quantfeijao (produto-preco produto3)))
+							)
+)
+
+(if (equal quantcebola 0) () (progn
+								(print "Cebola:")
+								(print "Quant:")
+								(print quantcebola)
+								(print "Valor parcial: ")
+								(print (* quantcebola (produto-preco produto4)))
+							)
+)
+
+(if (equal quantervilha 0) () (progn
+								(print "Ervilha:")
+								(print "Quant:")
+								(print quantervilha)
+								(print "Valor parcial: ")
+								(print (* quantervilha (produto-preco produto5)))
+							)
+)
+
+(if (equal quantmacarrao 0) () (progn
+								(print "Macarrao:")
+								(print "Quant:")
+								(print quantmacarrao)
+								(print "Valor parcial: ")
+								(print (* quantmacarrao (produto-preco produto6)))
+							)
+)
+
+(if (equal quantoleo 0) () (progn
+								(print "Oleo:")
+								(print "Quant:")
+								(print quantoleo)
+								(print "Valor parcial: ")
+								(print (* quantoleo (produto-preco produto7)))
+							)
+)
+
+(if (equal quanttomate 0) () (progn
+								(print "Tomate:")
+								(print "Quant:")
+								(print quanttomate)
+								(print "Valor parcial: ")
+								(print (* quanttomate (produto-preco produto8)))
+							)
+)
+
+(print "Valor total dos produtos:")
+;Soma os valores parciais de cada produto.
+(print (setq soma (+ (* quantbife (produto-preco produto1)) (* quantarroz (produto-preco produto2)) (* quantfeijao (produto-preco produto3)) (* quantcebola (produto-preco produto4)) (* quantervilha (produto-preco produto5)) (* quantmacarrao (produto-preco produto6)) (* quantoleo (produto-preco produto7)) (* quanttomate (produto-preco produto8)) )))
+
+
